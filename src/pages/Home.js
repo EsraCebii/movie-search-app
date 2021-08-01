@@ -9,6 +9,7 @@ import '../styles/Home.css';
 
 const Home = () => {
   const { setSearch, movies, favoriteHandler } = useContext(MovieContext);
+  
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
@@ -22,7 +23,7 @@ const Home = () => {
           {movies?.map((movie) => {
             return (
               <Link
-                to={'movies/tt1201607'} /* Router.js dinamik path yapısıyla aynı olacak şekilde imdbID ile routing işlemini yapınız */
+                to={'/movies/${movie.imdbID}'} /* Router.js dinamik path yapısıyla aynı olacak şekilde imdbID ile routing işlemini yapınız */
                 className='text-link'
                 key={movie.imdbID}
               >
